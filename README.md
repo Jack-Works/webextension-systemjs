@@ -27,3 +27,7 @@ import(browser.runtime.getURL("./es/content-script.js")).catch(() => {
     System.import("./system/content-script.js")
 })
 ```
+
+## An example repo
+
+https://github.com/Jack-Works/web-extension-esmodule-test/tree/master/mixed
