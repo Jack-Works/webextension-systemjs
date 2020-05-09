@@ -1,0 +1,42 @@
+{
+    "name": "@magic-works/webextension-systemjs",
+    "version": "0.0.1",
+    "description": "A SystemJS loader for Web Extension content script",
+    "license": "MIT",
+    "author": {
+        "email": "jackworks@protonmail.com",
+        "name": "Jack Works",
+        "url": "https://github.com/Jack-Works/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Jack-Works/webextension-systemjs"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^11.1.0",
+        "@rollup/plugin-node-resolve": "^7.1.3",
+        "@rollup/plugin-typescript": "^4.1.1",
+        "@types/systemjs": "^6.1.0",
+        "rollup": "^2.8.2",
+        "standard-version": "^8.0.0",
+        "systemjs": "^6.3.1",
+        "tslib": "^1.11.2",
+        "typescript": "^3.8.3",
+        "web-ext-types": "^3.2.1",
+        "webextension-polyfill": "^0.6.0"
+    },
+    "peerDependencies": {
+        "webextension-polyfill": "*"
+    },
+    "scripts": {
+        "start": "rollup -c -w",
+        "build": "rollup -c",
+        "prepublishOnly": "npm run build"
+    },
+    "files": [
+        "background-script.js",
+        "background-script.js.map",
+        "content-script.js",
+        "content-script.js.map"
+    ]
+}
