@@ -1,6 +1,6 @@
 {
     "name": "@magic-works/webextension-systemjs",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A SystemJS loader for Web Extension content script",
     "license": "MIT",
     "author": {
