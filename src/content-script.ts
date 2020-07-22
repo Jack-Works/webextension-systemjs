@@ -7,17 +7,20 @@ System.constructor.prototype.createScript = function () {
 }
 // System.constructor.prototype.createContext
 // System.constructor.prototype.prepareImport
+let previousReq: Promise<void> = Promise.resolve()
 System.constructor.prototype.instantiate = function (url: string, parentURL: string) {
-    return browser.runtime
-        .sendMessage<Message>({ key: 'system-js-loader', url, parentURL })
-        .then((e: undefined | [string, string]) => {
-            if (e) {
-                const E = new Error(e[0])
-                E.stack = e[1]
-                throw E
-            }
-            return this.getRegister()
-        })
+    return (previousReq = previousReq.finally(() =>
+        browser.runtime
+            .sendMessage<Message>({ key: 'system-js-loader', url, parentURL })
+            .then((e: undefined | [string, string]) => {
+                if (e) {
+                    const E = new Error(e[0])
+                    E.stack = e[1]
+                    throw E
+                }
+                return this.getRegister()
+            })
+    ))
 }
 const root = browser.runtime.getURL('/')
 // System.constructor.prototype.getRegister
