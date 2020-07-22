@@ -11,13 +11,12 @@ browser.runtime.onMessage.addListener((message: object, sender: browser.runtime.
     const { frameId } = sender
     const key = `${id}-${frameId}`
     const previousReq = Promise.resolve(previousRequests.get(key))
-    const p = previousReq
-        .finally(() => browser.tabs.executeScript(id, { frameId, file: url.join(root) }))
-        .then(
+    const p = previousReq.finally(() =>
+        browser.tabs.executeScript(id, { frameId, file: url.join(root) }).then(
             () => {},
             (e) => [e.message, e.stack]
         )
-    p.catch(console.error)
+    )
     previousRequests.set(key, p)
     return p
 })
