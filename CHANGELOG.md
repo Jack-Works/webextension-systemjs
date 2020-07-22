@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/Jack-Works/webextension-systemjs/compare/v0.0.3...v0.0.4) (2020-07-22)
+
+
+### Bug Fixes
+
+* wrong code ([13ede4f](https://github.com/Jack-Works/webextension-systemjs/commit/13ede4fc7a00d861372574468a7676a247796d7f))
+
 ### [0.0.3](https://github.com/Jack-Works/webextension-systemjs/compare/v0.0.1...v0.0.3) (2020-07-22)
 
 
